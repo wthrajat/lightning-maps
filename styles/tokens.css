@@ -1,0 +1,87 @@
+:root {
+  --font-sans: "Geist", "SF Pro Display", "Segoe UI", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono",
+    monospace;
+
+  --color-canvas: oklch(1 0 0);
+  --color-surface: oklch(0.975 0.004 340);
+  --color-surface-strong: oklch(0.945 0.008 340);
+  --color-panel: oklch(0.995 0.002 340);
+  --color-ink: oklch(0.17 0.018 340);
+  --color-ink-soft: oklch(0.39 0.018 340);
+  --color-muted: oklch(0.49 0.014 340);
+  --color-line: oklch(0.89 0.01 340);
+  --color-line-strong: oklch(0.78 0.018 340);
+  --color-primary: oklch(0.5 0.2 340);
+  --color-primary-hover: oklch(0.44 0.19 340);
+  --color-primary-soft: oklch(0.94 0.04 340);
+  --color-route-glow: oklch(0.72 0.18 340 / 0.3);
+  --color-marine: oklch(0.35 0.11 225);
+  --color-marine-soft: oklch(0.93 0.035 225);
+  --color-healthy: oklch(0.48 0.13 165);
+  --color-healthy-soft: oklch(0.94 0.035 165);
+  --color-warning: oklch(0.48 0.15 52);
+  --color-warning-soft: oklch(0.95 0.04 52);
+  --color-danger: oklch(0.55 0.2 25);
+  --color-danger-soft: oklch(0.95 0.04 25);
+
+  --shadow-low: 0 2px 8px oklch(0.17 0.018 340 / 0.08);
+  --shadow-panel: 0 8px 14px oklch(0.17 0.018 340 / 0.08);
+  --shadow-route: 0 0 12px var(--color-route-glow);
+
+  --radius-xs: 4px;
+  --radius-sm: 7px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-medium: 240ms;
+
+  --z-sticky: 30;
+  --z-dropdown: 40;
+  --z-modal-backdrop: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+}
+
+:root[data-theme="dark"] {
+  --color-canvas: oklch(0.115 0.008 340);
+  --color-surface: oklch(0.15 0.012 340);
+  --color-surface-strong: oklch(0.205 0.016 340);
+  --color-panel: oklch(0.13 0.01 340);
+  --color-ink: oklch(0.96 0.006 340);
+  --color-ink-soft: oklch(0.78 0.01 340);
+  --color-muted: oklch(0.68 0.012 340);
+  --color-line: oklch(0.28 0.018 340);
+  --color-line-strong: oklch(0.41 0.025 340);
+  --color-primary: oklch(0.68 0.19 340);
+  --color-primary-hover: oklch(0.74 0.17 340);
+  --color-primary-soft: oklch(0.24 0.07 340);
+  --color-route-glow: oklch(0.68 0.19 340 / 0.32);
+  --color-marine: oklch(0.75 0.1 225);
+  --color-marine-soft: oklch(0.22 0.045 225);
+  --color-healthy: oklch(0.72 0.13 165);
+  --color-healthy-soft: oklch(0.23 0.05 165);
+  --color-warning: oklch(0.75 0.15 65);
+  --color-warning-soft: oklch(0.24 0.055 65);
+  --color-danger: oklch(0.7 0.18 25);
+  --color-danger-soft: oklch(0.24 0.06 25);
+  --shadow-low: 0 2px 8px oklch(0 0 0 / 0.28);
+  --shadow-panel: 0 8px 14px oklch(0 0 0 / 0.3);
+}

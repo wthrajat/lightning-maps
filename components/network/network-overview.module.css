@@ -1,0 +1,586 @@
+.page {
+  width: min(100% - 2rem, 86rem);
+  margin-inline: auto;
+  padding-bottom: var(--space-20);
+}
+
+.intro {
+  padding-block: clamp(3.5rem, 8vw, 7rem) var(--space-12);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.kickerRow,
+.sectionHeading,
+.metricTopline,
+.bottleneckName,
+.centralityData {
+  display: flex;
+  align-items: center;
+}
+
+.kickerRow,
+.sectionHeading {
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.kicker,
+.eyebrow,
+.snapshotMeta,
+.metricTopline,
+.metric small,
+.metricSelected small,
+.rank,
+.bottleneckName > span,
+.centralityData,
+.syntheticCaveat > span {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.kicker,
+.eyebrow {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.snapshotStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.snapshotStatus svg {
+  width: 1rem;
+  color: var(--color-healthy);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  padding-top: var(--space-8);
+}
+
+.intro h1 {
+  max-width: 13ch;
+  margin: 0;
+  font-size: clamp(3rem, 6.5vw, 6.1rem);
+  font-weight: 660;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.lede {
+  margin-bottom: var(--space-5);
+  color: var(--color-ink-soft);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.snapshotMeta {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.metricSection {
+  padding-block: var(--space-12) var(--space-16);
+}
+
+.sectionHeading {
+  align-items: end;
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeading h2,
+.railHeading h2 {
+  margin: var(--space-2) 0 0;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 660;
+}
+
+.sectionHeading > p {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.metricIndex {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-block: 1px solid var(--color-line);
+}
+
+.metric,
+.metricSelected {
+  min-width: 0;
+  padding: var(--space-5);
+  border: 0;
+  border-right: 1px solid var(--color-line);
+  background: transparent;
+  text-align: left;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.metric:last-child,
+.metricSelected:last-child {
+  border-right: 0;
+}
+
+.metric:hover,
+.metricSelected {
+  background: var(--color-surface);
+}
+
+.metricSelected {
+  box-shadow: inset 0 -3px var(--color-primary);
+}
+
+.metricTopline {
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.metricTopline svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-primary);
+}
+
+.metricTopline svg:last-child {
+  width: 0.8rem;
+  margin-left: auto;
+  color: var(--color-line-strong);
+}
+
+.metric strong,
+.metricSelected strong {
+  display: block;
+  overflow: hidden;
+  margin-bottom: var(--space-1);
+  font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+  font-weight: 670;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metric small,
+.metricSelected small {
+  color: var(--color-muted);
+  font-size: 0.65rem;
+}
+
+.metricExplanation {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-primary-soft);
+}
+
+.metricExplanation p,
+.metricExplanation strong {
+  margin: 0;
+}
+
+.metricExplanation p {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.metricExplanation strong {
+  max-width: 64rem;
+  font-size: 0.95rem;
+  font-weight: 580;
+  line-height: 1.55;
+}
+
+.analysisLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(19rem, 0.72fr);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.ledgerColumn {
+  min-width: 0;
+  border-right: 1px solid var(--color-line);
+}
+
+.statusPanel,
+.hubLedger {
+  padding: var(--space-8);
+}
+
+.statusPanel {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.availabilityBar {
+  height: 0.7rem;
+  display: flex;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-strong);
+}
+
+.activeBar {
+  background: var(--color-healthy);
+}
+
+.offlineBar {
+  background: var(--color-danger);
+}
+
+.statusLegend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.statusLegend div {
+  padding-right: var(--space-5);
+  border-right: 1px solid var(--color-line);
+}
+
+.statusLegend div:not(:first-child) {
+  padding-left: var(--space-5);
+}
+
+.statusLegend div:last-child {
+  border-right: 0;
+}
+
+.statusLegend dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-size: 0.74rem;
+}
+
+.statusLegend dd {
+  margin: var(--space-1) 0 0;
+  font-size: 1.6rem;
+  font-weight: 680;
+  letter-spacing: -0.04em;
+}
+
+.activeDot,
+.offlineDot {
+  width: 0.48rem;
+  height: 0.48rem;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--color-healthy);
+}
+
+.offlineDot {
+  background: var(--color-danger);
+}
+
+.statusNote {
+  margin: var(--space-5) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.79rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.tableWrap table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 0.9rem var(--space-3);
+  border-bottom: 1px solid var(--color-line);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.tableWrap thead th {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tableWrap tbody th {
+  font-weight: 700;
+}
+
+.tableWrap tbody td {
+  color: var(--color-ink-soft);
+}
+
+.rank {
+  display: inline-block;
+  width: 1.8rem;
+  color: var(--color-muted);
+  font-size: 0.65rem;
+}
+
+.online,
+.offline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.online::before,
+.offline::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-healthy);
+  content: "";
+}
+
+.offline::before {
+  background: var(--color-danger);
+}
+
+.bottleneckRail {
+  padding: var(--space-8);
+  background: var(--color-surface);
+}
+
+.railHeading > p:last-child {
+  margin: var(--space-4) 0 var(--space-8);
+  color: var(--color-muted);
+  font-size: 0.83rem;
+}
+
+.bottleneckList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bottleneckList li {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-line);
+}
+
+.bottleneckName {
+  gap: var(--space-3);
+}
+
+.bottleneckName > span {
+  color: var(--color-muted);
+  font-size: 0.63rem;
+}
+
+.bottleneckName strong {
+  font-size: 0.9rem;
+}
+
+.bottleneckName em {
+  margin-left: auto;
+  font-size: 0.63rem;
+  font-style: normal;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.riskHigh {
+  color: var(--color-danger);
+}
+
+.riskModerate {
+  color: var(--color-warning);
+}
+
+.riskLow {
+  color: var(--color-healthy);
+}
+
+.centralityTrack {
+  height: 0.28rem;
+  margin-block: var(--space-3);
+  overflow: hidden;
+  background: var(--color-line);
+}
+
+.centralityTrack span {
+  height: 100%;
+  display: block;
+  background: var(--color-primary);
+}
+
+.centralityData {
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--color-muted);
+  font-size: 0.61rem;
+}
+
+.bottleneckList li > p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+.academicNote {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-marine);
+  border-radius: var(--radius-sm);
+  background: var(--color-marine-soft);
+}
+
+.academicNote strong {
+  font-size: 0.79rem;
+}
+
+.academicNote p {
+  margin: var(--space-2) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.73rem;
+}
+
+.syntheticCaveat {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.25fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  border: 1px dashed var(--color-line-strong);
+}
+
+.syntheticCaveat > span {
+  color: var(--color-warning);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+}
+
+.syntheticCaveat p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 68rem) {
+  .metricIndex {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .metric:nth-child(3),
+  .metricSelected:nth-child(3) {
+    border-right: 0;
+  }
+
+  .metric:nth-child(n + 4),
+  .metricSelected:nth-child(n + 4) {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .analysisLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .ledgerColumn {
+    border-right: 0;
+  }
+
+  .bottleneckRail {
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+@media (max-width: 46rem) {
+  .page {
+    width: min(100% - 1.25rem, 86rem);
+  }
+
+  .kickerRow,
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .intro h1 {
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+  }
+
+  .metricIndex {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .metric,
+  .metricSelected {
+    min-width: min(78vw, 17rem);
+    border-top: 0 !important;
+    border-right: 1px solid var(--color-line) !important;
+    scroll-snap-align: start;
+  }
+
+  .metricExplanation,
+  .syntheticCaveat {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .statusPanel,
+  .hubLedger,
+  .bottleneckRail {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .statusLegend {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-5);
+  }
+
+  .statusLegend div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .statusLegend div:nth-child(3) {
+    padding-left: 0;
+    border-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric,
+  .metricSelected {
+    transition: none;
+  }
+}

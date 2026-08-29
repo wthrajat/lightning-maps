@@ -1,0 +1,39 @@
+{
+  "name": "lightning-maps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An interactive, deterministic simulation of payment routing through a Lightning-inspired network.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --incremental false",
+    "test": "node --test --experimental-strip-types tests/*.test.ts",
+    "check": "pnpm run lint && pnpm run typecheck && pnpm test && pnpm run build"
+  },
+  "dependencies": {
+    "@xyflow/react": "12.8.5",
+    "lucide-react": "^0.503.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "recharts": "^3.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T00:00:00.000Z",
+  "title": "Design System: Lightning Maps",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Pure Canvas",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.28 0 0)", "oklch(0.42 0 0)", "oklch(0.56 0 0)", "oklch(0.7 0 0)", "oklch(0.82 0 0)", "oklch(0.92 0 0)", "oklch(1 0 0)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "oklch(0.17 0.018 340)",
+        "tonalRamp": ["oklch(0.15 0.018 340)", "oklch(0.27 0.018 340)", "oklch(0.39 0.018 340)", "oklch(0.51 0.016 340)", "oklch(0.63 0.014 340)", "oklch(0.75 0.012 340)", "oklch(0.87 0.008 340)", "oklch(0.95 0.004 340)"]
+      },
+      "signal-rose": {
+        "role": "primary",
+        "displayName": "Signal Rose",
+        "canonical": "oklch(0.5 0.2 340)",
+        "tonalRamp": ["oklch(0.15 0.08 340)", "oklch(0.27 0.14 340)", "oklch(0.38 0.18 340)", "oklch(0.5 0.2 340)", "oklch(0.62 0.18 340)", "oklch(0.74 0.14 340)", "oklch(0.86 0.08 340)", "oklch(0.95 0.03 340)"]
+      },
+      "marine": {
+        "role": "secondary",
+        "displayName": "Deep Marine",
+        "canonical": "oklch(0.35 0.11 225)",
+        "tonalRamp": ["oklch(0.15 0.05 225)", "oklch(0.25 0.08 225)", "oklch(0.35 0.11 225)", "oklch(0.48 0.12 225)", "oklch(0.61 0.11 225)", "oklch(0.73 0.09 225)", "oklch(0.85 0.055 225)", "oklch(0.95 0.02 225)"]
+      },
+      "healthy": {
+        "role": "tertiary",
+        "displayName": "Healthy Teal",
+        "canonical": "oklch(0.48 0.13 165)",
+        "tonalRamp": ["oklch(0.15 0.05 165)", "oklch(0.27 0.08 165)", "oklch(0.39 0.11 165)", "oklch(0.55 0.13 165)", "oklch(0.66 0.11 165)", "oklch(0.77 0.08 165)", "oklch(0.87 0.05 165)", "oklch(0.95 0.02 165)"]
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Capacity Amber",
+        "canonical": "oklch(0.48 0.15 52)",
+        "tonalRamp": ["oklch(0.15 0.06 52)", "oklch(0.27 0.1 52)", "oklch(0.4 0.14 52)", "oklch(0.53 0.16 52)", "oklch(0.63 0.16 52)", "oklch(0.75 0.12 52)", "oklch(0.86 0.07 52)", "oklch(0.95 0.03 52)"]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Failure Red",
+        "canonical": "oklch(0.55 0.2 25)",
+        "tonalRamp": ["oklch(0.15 0.08 25)", "oklch(0.27 0.14 25)", "oklch(0.4 0.18 25)", "oklch(0.55 0.2 25)", "oklch(0.66 0.17 25)", "oklch(0.77 0.12 25)", "oklch(0.87 0.07 25)", "oklch(0.95 0.03 25)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The landing thesis only." },
+      "headline": { "displayName": "Headline", "purpose": "Major explanatory sections." },
+      "title": { "displayName": "Product title", "purpose": "Panels, results, and dialogs." },
+      "body": { "displayName": "Body", "purpose": "Plain-language teaching and interface copy." },
+      "label": { "displayName": "Measured label", "purpose": "Reproducible data and short system readouts." }
+    },
+    "shadows": [
+      { "name": "control-lift", "value": "0 2px 8px oklch(0.17 0.018 340 / 0.08)", "purpose": "Compact floating map controls and node orbs." },
+      { "name": "panel-lift", "value": "0 8px 14px oklch(0.17 0.018 340 / 0.08)", "purpose": "Hero map and selected-node detail panel." },
+      { "name": "route-signal", "value": "0 0 12px oklch(0.72 0.18 340 / 0.3)", "purpose": "Moving payment packet and active hand-off only." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All state transitions and responsive feedback." },
+      { "name": "fast", "value": "160ms", "purpose": "Hover, focus, and compact control feedback." },
+      { "name": "medium", "value": "240ms", "purpose": "Panel and state changes." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "672px" },
+      { "name": "tablet", "value": "832px" },
+      { "name": "compact-desktop", "value": "1120px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action on a product surface.",
+      "html": "<button class=\"ds-btn-primary\">Find best route</button>",
+      "css": ".ds-btn-primary { min-height: 44px; padding: 12px 16px; border: 0; border-radius: var(--radius-sm, 7px); background: var(--color-primary, oklch(0.5 0.2 340)); color: white; font: 700 14px/1 var(--font-sans, system-ui); transition: background 160ms cubic-bezier(0.22,1,0.36,1), transform 160ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background: var(--color-primary-hover, oklch(0.44 0.19 340)); } .ds-btn-primary:focus-visible { outline: 3px solid var(--color-primary, oklch(0.5 0.2 340)); outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A familiar bordered action with no decorative shadow.",
+      "html": "<button class=\"ds-btn-secondary\">Reset</button>",
+      "css": ".ds-btn-secondary { min-height: 44px; padding: 12px 16px; border: 1px solid var(--color-line-strong, oklch(0.78 0.018 340)); border-radius: var(--radius-sm, 7px); background: transparent; color: var(--color-ink, oklch(0.17 0.018 340)); font: 700 14px/1 var(--font-sans, system-ui); transition: background 160ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-secondary:hover { background: var(--color-surface, oklch(0.975 0.004 340)); } .ds-btn-secondary:focus-visible { outline: 3px solid var(--color-primary, oklch(0.5 0.2 340)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Route Amount Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A data-forward field with an explicit unit.",
+      "html": "<label class=\"ds-field\"><span>Amount</span><span class=\"ds-input-wrap\"><input class=\"ds-input\" value=\"50000\" aria-label=\"Amount\"><b>sats</b></span></label>",
+      "css": ".ds-field { display: grid; gap: 8px; color: var(--color-ink-soft, oklch(0.39 0.018 340)); font: 700 12px/1.4 var(--font-sans, system-ui); } .ds-input-wrap { height: 44px; display: flex; align-items: center; border: 1px solid var(--color-line-strong, oklch(0.78 0.018 340)); border-radius: var(--radius-sm, 7px); background: var(--color-panel, oklch(0.995 0.002 340)); } .ds-input { width: 100%; min-width: 0; padding: 0 12px; border: 0; outline: 0; background: transparent; color: var(--color-ink, oklch(0.17 0.018 340)); font: 500 14px/1 var(--font-mono, monospace); } .ds-input-wrap:focus-within { outline: 3px solid var(--color-primary, oklch(0.5 0.2 340)); outline-offset: 2px; } .ds-input-wrap b { padding-right: 12px; color: var(--color-muted, oklch(0.49 0.014 340)); font: 600 11px/1 var(--font-mono, monospace); }"
+    },
+    {
+      "name": "Active Navigation",
+      "kind": "nav",
+      "description": "Quiet navigation with one route marker for the current page.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-active\">Explore</a><a href=\"#\">Learn</a><a href=\"#\">Network</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; font: 650 13px/1 var(--font-sans, system-ui); } .ds-nav a { padding: 10px 12px; border-radius: var(--radius-sm, 7px); color: var(--color-muted, oklch(0.49 0.014 340)); text-decoration: none; transition: background 160ms cubic-bezier(0.22,1,0.36,1), color 160ms cubic-bezier(0.22,1,0.36,1); } .ds-nav a:hover, .ds-nav .ds-nav-active { background: var(--color-surface, oklch(0.975 0.004 340)); color: var(--color-ink, oklch(0.17 0.018 340)); } .ds-nav .ds-nav-active { box-shadow: inset 0 -2px var(--color-primary, oklch(0.5 0.2 340)); } .ds-nav a:focus-visible { outline: 3px solid var(--color-primary, oklch(0.5 0.2 340)); outline-offset: 2px; }"
+    },
+    {
+      "name": "Route Stop",
+      "kind": "chip",
+      "refersTo": "route-chip",
+      "description": "A participant on the selected payment path.",
+      "html": "<span class=\"ds-route-chip\">Charlie</span>",
+      "css": ".ds-route-chip { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 8px 12px; border: 1px solid var(--color-primary, oklch(0.5 0.2 340)); border-radius: 999px; background: var(--color-primary-soft, oklch(0.94 0.04 340)); color: var(--color-primary, oklch(0.5 0.2 340)); font: 700 11px/1 var(--font-mono, monospace); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Atlas",
+    "overview": "Lightning Maps feels like a precise route-control surface projected in a bright classroom: clear at a glance, credible under scrutiny, and calm enough to teach. A nearly pure white field keeps the dense topology readable. Deep signal rose is reserved for the path currently being discussed, while marine and semantic colors describe the network without competing for attention. The signature is the live route thread—a thin, animated signal that moves through the same graph the algorithm evaluates. It is functional state, not atmosphere. The interface rejects cryptocurrency spectacle and lets map conventions, structured data, and plain language carry the experience.",
+    "keyCharacteristics": [
+      "Route-first visual hierarchy with the graph occupying the dominant surface.",
+      "Restrained product color; signal rose appears only on active paths and primary actions.",
+      "One sans family across product UI, with mono reserved for measured data and system labels.",
+      "Mostly flat layers, precise dividers, and compact radii that support dense information.",
+      "Structural responsiveness: graph first and horizontally scrollable comparisons on mobile."
+    ],
+    "rules": [
+      { "name": "The One Route Rule", "body": "Signal rose occupies no more than roughly ten percent of a working screen. Its scarcity tells the user where the current decision lives.", "section": "colors" },
+      { "name": "The State Is Not Decoration Rule", "body": "Teal, amber, and red appear only when they encode success, constraint, or failure, and always with a text or icon cue.", "section": "colors" },
+      { "name": "The Teaching Voice Rule", "body": "Familiar words lead; technical terms follow. A user reads available room before liquidity and connections before channels.", "section": "typography" },
+      { "name": "The Flat Until Floating Rule", "body": "A panel at rest uses a divider or tonal layer. Shadow is earned by physical overlap or active route state.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do make the graph the dominant product surface and repeat essential results in semantic text.",
+      "Do use Signal Rose (oklch(0.5 0.2 340)) only for the current route, primary action, selection, or focus.",
+      "Do keep body text at or above WCAG AA contrast and show every state with words or icons as well as color.",
+      "Do label all data and probabilities as synthetic or estimated.",
+      "Do restructure mobile around a graph-first journey, scrollable comparisons, and touch targets of at least 44px."
+    ],
+    "donts": [
+      "Don't resemble a cryptocurrency trading dashboard or a toy student project.",
+      "Don't use giant Bitcoin logos, spinning coins, hacker imagery, excessive neon, generic crypto gradients, or blockchain cubes.",
+      "Don't use ornamental glassmorphism, generic Tailwind card grids, unsupported AI claims, or dense blockchain internals before the routing concept is understood.",
+      "Don't use gradient text, colored side-stripe callouts, nested cards, decorative grid backgrounds outside an actual map canvas, or radii above 16px on panels.",
+      "Don't animate content for spectacle; motion must explain selection, forwarding, recalculation, or completion and must respect reduced motion."
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+@keyframes route-dash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes concept-packet-travel {
+  0%,
+  12% {
+    top: 38%;
+    left: 13%;
+  }
+
+  45%,
+  58% {
+    top: 31%;
+    left: 50%;
+  }
+
+  90%,
+  100% {
+    top: 38%;
+    left: 88%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.is-spinning {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes loading-route {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(12rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-packet,
+  .concept-packet {
+    display: none;
+  }
+}

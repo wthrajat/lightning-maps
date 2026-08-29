@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.next/
+.next-validation/
+out/
+coverage/
+.DS_Store
+*.tsbuildinfo
+.pnpm-store/

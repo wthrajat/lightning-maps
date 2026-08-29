@@ -1,0 +1,1786 @@
+.educationPage {
+  overflow: clip;
+  background: var(--color-canvas);
+}
+
+.heroMarker {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.learnHero {
+  width: min(100% - 2rem, 86rem);
+  min-height: min(52rem, calc(100svh - 4rem));
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.86fr) minmax(30rem, 1.14fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+  margin-inline: auto;
+  padding-block: var(--space-20);
+}
+
+.learnHeroCopy h1 {
+  max-width: 13ch;
+  margin: var(--space-5) 0 var(--space-6);
+  font-size: 4.4rem;
+  font-weight: 680;
+  letter-spacing: -0.04em;
+}
+
+.heroLede {
+  max-width: 40rem;
+  margin-bottom: var(--space-8);
+  color: var(--color-ink-soft);
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.heroNote {
+  margin: var(--space-5) 0 0;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.heroRouteMap {
+  position: relative;
+  min-height: 30rem;
+  overflow: hidden;
+  border-block: 1px solid var(--color-line);
+  background:
+    radial-gradient(circle at 23% 52%, var(--color-marine-soft), transparent 23%),
+    radial-gradient(circle at 77% 52%, var(--color-primary-soft), transparent 24%),
+    var(--color-panel);
+}
+
+.heroRouteMap::before,
+.heroRouteMap::after {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  content: "";
+  opacity: 0.55;
+}
+
+.heroRouteMap::before {
+  top: -3.5rem;
+  right: 26%;
+}
+
+.heroRouteMap::after {
+  bottom: -4.7rem;
+  left: 34%;
+}
+
+.heroRouteMap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroRouteMuted,
+.heroRouteSelected {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.heroRouteMuted {
+  stroke: var(--color-line-strong);
+  stroke-dasharray: 4 8;
+}
+
+.heroRouteSelected {
+  stroke: var(--color-primary);
+  stroke-dasharray: 9 8;
+  filter: drop-shadow(0 0 6px var(--color-route-glow));
+  animation: lesson-route-flow 14s linear infinite;
+}
+
+.mapStop {
+  position: absolute;
+  z-index: 1;
+  min-width: 4.8rem;
+  min-height: 4.8rem;
+  display: grid;
+  place-content: center;
+  border: 2px solid var(--color-line-strong);
+  border-radius: 50%;
+  background: var(--color-canvas);
+  text-align: center;
+}
+
+.mapStop span {
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.mapStop small {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+}
+
+.mapStopStart {
+  top: calc(50% - 2.4rem);
+  left: 3%;
+  border-color: var(--color-marine);
+}
+
+.mapStopNorth {
+  top: 10%;
+  left: 37%;
+}
+
+.mapStopSouth {
+  bottom: 9%;
+  left: 42%;
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.mapStopEnd {
+  top: calc(50% - 2.4rem);
+  right: 3%;
+  border-color: var(--color-primary);
+}
+
+.mapDecision {
+  position: absolute;
+  z-index: 2;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  max-width: 15rem;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-canvas);
+  font-size: 0.75rem;
+}
+
+.mapDecision span {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--color-primary-hover);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+.courseSection {
+  border-block: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.courseLayout {
+  width: min(100% - 2rem, 86rem);
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  margin-inline: auto;
+}
+
+.courseRail {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  padding-block: var(--space-20);
+}
+
+.courseRail > p {
+  margin-bottom: var(--space-5);
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.courseRail ol,
+.courseChapters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.courseRail ol {
+  position: relative;
+}
+
+.courseRail ol::before {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0.82rem;
+  width: 1px;
+  background: var(--color-line-strong);
+  content: "";
+}
+
+.courseRail li {
+  position: relative;
+}
+
+.courseRail a {
+  min-height: 2.45rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.courseRail a:hover {
+  color: var(--color-ink);
+}
+
+.courseRail a span {
+  z-index: 1;
+  width: 1.65rem;
+  height: 1.65rem;
+  display: grid;
+  flex: none;
+  place-items: center;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.59rem;
+}
+
+.courseChapters {
+  border-left: 1px solid var(--color-line);
+}
+
+.courseChapter,
+.courseChapterWide {
+  scroll-margin-top: 5.5rem;
+}
+
+.courseChapter {
+  min-height: 28rem;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) minmax(13rem, 0.55fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding: var(--space-20) 0 var(--space-20) clamp(2rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.courseNumber {
+  align-self: start;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.chapterCopy {
+  max-width: 45rem;
+}
+
+.chapterCopy h2 {
+  max-width: 18ch;
+  margin-bottom: var(--space-5);
+  font-size: 2.65rem;
+  font-weight: 660;
+}
+
+.chapterCopy p {
+  max-width: 66ch;
+  color: var(--color-ink-soft);
+}
+
+.chapterLead {
+  margin-bottom: var(--space-4);
+  color: var(--color-ink) !important;
+  font-size: 1.12rem;
+  line-height: 1.58;
+}
+
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  color: var(--color-primary);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.inlineLink svg {
+  width: 1rem;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.inlineLink:hover svg {
+  transform: translateX(0.2rem);
+}
+
+.chapterRoute {
+  position: relative;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chapterRoute::before,
+.chapterRoute::after {
+  position: absolute;
+  z-index: 0;
+  right: 2.8rem;
+  left: 2.8rem;
+  height: 1px;
+  background: var(--color-line-strong);
+  content: "";
+  transform-origin: left;
+}
+
+.chapterRoute::before {
+  transform: rotate(-23deg);
+}
+
+.chapterRoute::after {
+  transform: rotate(23deg);
+}
+
+.chapterRoute span,
+.chapterRoute b {
+  position: relative;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-canvas);
+  font-size: 0.8rem;
+}
+
+.chapterRoute b {
+  position: absolute;
+  left: calc(50% - 1.15rem);
+  width: 2.3rem;
+  height: 2.3rem;
+  border-color: var(--color-line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.chapterRoute b:nth-of-type(1) {
+  top: 2.3rem;
+}
+
+.chapterRoute b:nth-of-type(2) {
+  bottom: 2.3rem;
+}
+
+.chapterRoute i {
+  display: none;
+}
+
+.paymentComparison {
+  margin-top: var(--space-8);
+  border-block: 1px solid var(--color-line);
+}
+
+.paymentComparison > div {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.paymentComparison > div + div {
+  border-top: 1px solid var(--color-line);
+}
+
+.paymentComparison strong {
+  width: 8rem;
+  flex: none;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+}
+
+.paymentComparison span {
+  padding: 0.42rem 0.6rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-xs);
+  background: var(--color-canvas);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.paymentComparison i {
+  min-width: 1.4rem;
+  height: 1px;
+  flex: 1;
+  background: var(--color-primary);
+}
+
+.conciseNote,
+.unofficialNote {
+  padding: var(--space-5);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-canvas);
+}
+
+.conciseNote span,
+.unofficialNote strong {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.conciseNote strong {
+  display: block;
+  max-width: 15ch;
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.unofficialNote p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+}
+
+.roadAnalogy {
+  display: flex;
+  align-items: center;
+}
+
+.roadAnalogy > span {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  flex: none;
+  place-items: center;
+  border: 2px solid var(--color-marine);
+  border-radius: 50%;
+  background: var(--color-canvas);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.roadAnalogy > div {
+  position: relative;
+  flex: 1;
+}
+
+.roadAnalogy i {
+  display: block;
+  height: 0.55rem;
+  border-block: 1px dashed var(--color-line-strong);
+  background: var(--color-surface-strong);
+}
+
+.roadAnalogy small {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.truckAnalogy {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: var(--space-3);
+  align-items: center;
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--color-line-strong);
+}
+
+.truckAnalogy > svg {
+  width: 1.5rem;
+  color: var(--color-danger);
+}
+
+.truckAnalogy > svg:nth-of-type(2) {
+  width: 1rem;
+  color: var(--color-muted);
+}
+
+.truckAnalogy div span,
+.truckAnalogy div strong {
+  display: block;
+}
+
+.truckAnalogy div span {
+  color: var(--color-muted);
+  font-size: 0.66rem;
+}
+
+.truckAnalogy div strong {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.truckAnalogy p {
+  grid-column: 1 / -1;
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-danger);
+  font-size: 0.72rem;
+}
+
+.routeChoice {
+  border-block: 1px solid var(--color-line);
+}
+
+.routeChoice p {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-5);
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.routeChoice p + p {
+  border-top: 1px solid var(--color-line);
+}
+
+.routeChoice span,
+.routeChoice strong {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+}
+
+.routeChoiceSelected {
+  background: var(--color-primary-soft);
+  color: var(--color-ink) !important;
+}
+
+.routeChoiceSelected span {
+  color: var(--color-primary);
+}
+
+.courseChapterWide {
+  padding: var(--space-20) 0 var(--space-20) clamp(2rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.factorList {
+  margin: var(--space-8) 0 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.factorList > div {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: var(--space-5);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.factorList dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.factorList dt svg {
+  width: 1rem;
+  color: var(--color-primary);
+}
+
+.factorList dd {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+}
+
+.algorithmLesson {
+  scroll-margin-top: 5.5rem;
+  overflow: hidden;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-canvas);
+}
+
+.algorithmHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.7fr);
+  gap: var(--space-12);
+  padding: var(--space-8);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.algorithmMarker {
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.algorithmHeading h3 {
+  max-width: 17ch;
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 660;
+}
+
+.algorithmHeading > p {
+  align-self: end;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.86rem;
+}
+
+.algorithmWorkspace {
+  display: grid;
+  grid-template-columns: minmax(24rem, 1.15fr) minmax(20rem, 0.85fr);
+}
+
+.algorithmCanvas {
+  min-height: 26rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  padding: var(--space-6);
+  border-right: 1px solid var(--color-line);
+  background: var(--color-panel);
+}
+
+.algorithmGraph {
+  width: 100%;
+  overflow: visible;
+}
+
+.algorithmEdge,
+.algorithmEdgeActive,
+.algorithmEdgeFinal {
+  fill: none;
+  stroke-linecap: round;
+  transition:
+    stroke var(--duration-medium) var(--ease-out),
+    stroke-width var(--duration-medium) var(--ease-out);
+}
+
+.algorithmEdge {
+  stroke: var(--color-line-strong);
+  stroke-width: 3;
+}
+
+.algorithmEdgeActive {
+  stroke: var(--color-marine);
+  stroke-width: 5;
+}
+
+.algorithmEdgeFinal {
+  stroke: var(--color-primary);
+  stroke-width: 6;
+  filter: drop-shadow(0 0 5px var(--color-route-glow));
+}
+
+.edgeWeight circle {
+  fill: var(--color-canvas);
+  stroke: var(--color-line-strong);
+}
+
+.edgeWeight text {
+  fill: var(--color-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-anchor: middle;
+}
+
+.algorithmNode circle,
+.algorithmNodeVisited circle,
+.algorithmNodeCurrent circle {
+  fill: var(--color-canvas);
+  stroke: var(--color-line-strong);
+  stroke-width: 2;
+  transition:
+    fill var(--duration-medium) var(--ease-out),
+    stroke var(--duration-medium) var(--ease-out),
+    stroke-width var(--duration-medium) var(--ease-out);
+}
+
+.algorithmNodeVisited circle {
+  fill: var(--color-marine-soft);
+  stroke: var(--color-marine);
+}
+
+.algorithmNodeCurrent circle {
+  fill: var(--color-primary-soft);
+  stroke: var(--color-primary);
+  stroke-width: 4;
+}
+
+.algorithmNode text,
+.algorithmNodeVisited text,
+.algorithmNodeCurrent text {
+  fill: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.graphCaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+}
+
+.algorithmReadout {
+  min-width: 0;
+  padding: var(--space-8);
+}
+
+.stepCounter {
+  margin-bottom: var(--space-6);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.algorithmReadout h4 {
+  margin: 0 0 var(--space-3);
+  font-size: 1.3rem;
+}
+
+.algorithmReadout > div > p {
+  min-height: 6rem;
+  margin-bottom: var(--space-6);
+  color: var(--color-ink-soft);
+  font-size: 0.82rem;
+}
+
+.distanceReadout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 0 var(--space-6);
+  border-block: 1px solid var(--color-line);
+}
+
+.distanceReadout > div {
+  padding: var(--space-3);
+}
+
+.distanceReadout > div + div {
+  border-left: 1px solid var(--color-line);
+}
+
+.distanceReadout dt {
+  color: var(--color-muted);
+  font-size: 0.59rem;
+}
+
+.distanceReadout dd {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.algorithmActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.scoreFormula {
+  display: grid;
+  grid-template-columns: auto minmax(22rem, 1fr) minmax(15rem, 0.6fr);
+  gap: var(--space-5);
+  align-items: center;
+  padding: var(--space-5) var(--space-8);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.scoreFormula p,
+.scoreFormula span {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.67rem;
+}
+
+.scoreFormula code {
+  overflow-x: auto;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.glossarySection {
+  width: min(100% - 2rem, 86rem);
+  margin-inline: auto;
+  padding-block: var(--space-24);
+}
+
+.sectionHeading,
+.aboutSectionIntro {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.34fr) minmax(0, 1fr);
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.sectionHeading > p,
+.aboutSectionIntro > p {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.sectionHeading h2,
+.aboutSectionIntro h2 {
+  max-width: 23ch;
+  margin-bottom: var(--space-4);
+  font-size: 2.8rem;
+  font-weight: 660;
+}
+
+.sectionHeading div > p,
+.aboutSectionIntro div > p {
+  max-width: 66ch;
+  margin: 0;
+  color: var(--color-ink-soft);
+}
+
+.glossary {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.38fr) minmax(0, 1fr);
+  border-block: 1px solid var(--color-line-strong);
+}
+
+.glossaryTerms {
+  border-right: 1px solid var(--color-line-strong);
+}
+
+.glossaryTerm {
+  width: 100%;
+  min-height: 4.35rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.9fr);
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  background: transparent;
+  color: var(--color-muted);
+  text-align: left;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.glossaryTerm:last-child {
+  border-bottom: 0;
+}
+
+.glossaryTerm:hover,
+.glossaryTermActive {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.glossaryTermActive {
+  box-shadow: inset 3px 0 var(--color-primary);
+}
+
+.glossaryTerm span {
+  font-size: 0.73rem;
+}
+
+.glossaryTerm strong {
+  font-size: 0.74rem;
+}
+
+.glossaryTerm svg {
+  width: 0.8rem;
+  color: var(--color-line-strong);
+}
+
+.glossaryDefinition {
+  align-self: start;
+  padding: var(--space-10) clamp(2rem, 5vw, 5rem);
+}
+
+.glossaryTranslation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.glossaryTranslation svg {
+  width: 0.85rem;
+  color: var(--color-primary);
+}
+
+.glossaryTranslation strong {
+  color: var(--color-primary);
+}
+
+.glossaryDefinition h3 {
+  margin-bottom: var(--space-8);
+  font-size: 2.5rem;
+  font-weight: 660;
+}
+
+.definitionLayers {
+  margin: 0;
+}
+
+.definitionLayers > div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-line);
+}
+
+.definitionLayers dt strong,
+.definitionLayers dt span {
+  display: block;
+}
+
+.definitionLayers dt strong {
+  margin-bottom: var(--space-1);
+  font-size: 0.78rem;
+}
+
+.definitionLayers dt span {
+  color: var(--color-muted);
+  font-size: 0.66rem;
+}
+
+.definitionLayers dd {
+  max-width: 63ch;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.87rem;
+}
+
+.learnNext,
+.aboutNext {
+  width: min(100% - 2rem, 86rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+  margin: 0 auto var(--space-24);
+  padding: var(--space-10);
+  border-radius: var(--radius-md);
+  background: var(--color-ink);
+  color: var(--color-canvas);
+}
+
+.learnNext > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-4);
+}
+
+.learnNext > div > svg {
+  width: 1.5rem;
+  grid-row: 1 / span 3;
+  color: var(--color-primary-hover);
+}
+
+.learnNext p,
+.aboutNext p {
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-hover);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.learnNext h2,
+.aboutNext h2 {
+  margin-bottom: var(--space-2);
+  color: var(--color-canvas);
+  font-size: 1.8rem;
+}
+
+.learnNext span {
+  max-width: 60ch;
+  color: color-mix(in oklch, var(--color-canvas) 72%, transparent);
+  font-size: 0.82rem;
+}
+
+/* About */
+
+.aboutHero {
+  width: min(100% - 2rem, 86rem);
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.8fr) minmax(25rem, 1.2fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  margin-inline: auto;
+  padding-block: var(--space-24);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.aboutHero h1 {
+  max-width: 10ch;
+  margin: var(--space-5) 0 0;
+  font-size: 4.5rem;
+  font-weight: 680;
+  letter-spacing: -0.04em;
+}
+
+.aboutHeroStatement p {
+  max-width: 28ch;
+  margin-bottom: var(--space-5);
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.aboutHeroStatement span {
+  max-width: 64ch;
+  display: block;
+  color: var(--color-ink-soft);
+}
+
+.problemStatement {
+  width: min(100% - 2rem, 86rem);
+  display: grid;
+  grid-template-columns: auto minmax(20rem, 1fr) minmax(20rem, 0.7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+  margin-inline: auto;
+  padding-block: var(--space-20);
+}
+
+.problemIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.problemIcon svg {
+  width: 1.25rem;
+}
+
+.problemStatement > div > p {
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.problemStatement h2 {
+  margin: 0;
+  font-size: 2.35rem;
+  font-weight: 660;
+}
+
+.problemStatement > p {
+  margin: var(--space-8) 0 0;
+  color: var(--color-ink-soft);
+}
+
+.approachSection,
+.boundariesSection {
+  padding-block: var(--space-24);
+  border-top: 1px solid var(--color-line);
+}
+
+.approachSection {
+  background: var(--color-surface);
+}
+
+.aboutSectionIntro,
+.methodFlow,
+.signalBand,
+.boundaryTable {
+  width: min(100% - 2rem, 86rem);
+  margin-inline: auto;
+}
+
+.methodFlow {
+  border-block: 1px solid var(--color-line-strong);
+}
+
+.methodFlow article {
+  min-height: 8rem;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6);
+}
+
+.methodFlow article + article {
+  border-top: 1px solid var(--color-line);
+}
+
+.methodFlow article > span {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.methodFlow h3 {
+  margin-bottom: var(--space-2);
+  font-size: 1.15rem;
+}
+
+.methodFlow p {
+  max-width: 70ch;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.84rem;
+}
+
+.methodFlow svg {
+  width: 1.1rem;
+  color: var(--color-line-strong);
+}
+
+.methodFlow article:last-child svg {
+  color: var(--color-healthy);
+}
+
+.signalBand {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+  padding-block: var(--space-6);
+}
+
+.signalBand p {
+  margin: 0;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.signalBand ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signalBand li {
+  padding: 0.35rem 0.62rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-canvas);
+  color: var(--color-ink-soft);
+  font-size: 0.7rem;
+}
+
+.boundaryTable {
+  border-block: 1px solid var(--color-line-strong);
+}
+
+.boundaryHeader,
+.boundaryRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.boundaryHeader {
+  background: var(--color-surface);
+}
+
+.boundaryHeader span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.boundaryHeader svg {
+  width: 1rem;
+}
+
+.boundaryHeader span,
+.boundaryRow span {
+  padding: var(--space-4) var(--space-5);
+}
+
+.boundaryHeader span + span,
+.boundaryRow span + span {
+  border-left: 1px solid var(--color-line);
+}
+
+.boundaryRow {
+  border-top: 1px solid var(--color-line);
+}
+
+.boundaryRow span {
+  color: var(--color-ink-soft);
+  font-size: 0.82rem;
+}
+
+.ecosystemSection {
+  width: min(100% - 2rem, 86rem);
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.3fr) minmax(24rem, 1fr) minmax(16rem, 0.5fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-inline: auto;
+  padding-block: var(--space-24);
+  border-top: 1px solid var(--color-line);
+}
+
+.ecosystemLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.ecosystemLabel svg {
+  width: 1.1rem;
+}
+
+.ecosystemCopy h2 {
+  max-width: 18ch;
+  margin-bottom: var(--space-5);
+  font-size: 2.8rem;
+  font-weight: 660;
+}
+
+.ecosystemCopy p {
+  max-width: 67ch;
+  color: var(--color-ink-soft);
+}
+
+.affiliationNote {
+  align-self: start;
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-primary);
+}
+
+.affiliationNote strong {
+  font-size: 0.86rem;
+}
+
+.affiliationNote p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.disclaimerSection {
+  width: min(100% - 2rem, 86rem);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-6);
+  margin: 0 auto var(--space-24);
+  padding: var(--space-10);
+  border: 1px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  background: var(--color-warning-soft);
+}
+
+.disclaimerSection > svg {
+  width: 1.8rem;
+  color: var(--color-warning);
+}
+
+.disclaimerSection p {
+  margin-bottom: var(--space-3);
+  color: var(--color-warning);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.disclaimerSection h2 {
+  max-width: 34ch;
+  margin-bottom: var(--space-4);
+  font-size: 2rem;
+}
+
+.disclaimerSection span {
+  max-width: 75ch;
+  display: block;
+  color: var(--color-ink-soft);
+  font-size: 0.84rem;
+}
+
+.aboutNext > div:first-child {
+  max-width: 42rem;
+}
+
+.aboutNext > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@keyframes lesson-route-flow {
+  to {
+    stroke-dashoffset: -136;
+  }
+}
+
+@media (max-width: 72rem) {
+  .learnHero {
+    grid-template-columns: 1fr;
+  }
+
+  .learnHeroCopy {
+    max-width: 50rem;
+  }
+
+  .heroRouteMap {
+    width: min(100%, 54rem);
+  }
+
+  .courseLayout {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .courseChapter {
+    grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .courseChapter > :last-child:not(.chapterCopy) {
+    grid-column: 2;
+    width: min(100%, 30rem);
+  }
+
+  .algorithmHeading,
+  .algorithmWorkspace {
+    grid-template-columns: 1fr;
+  }
+
+  .algorithmCanvas {
+    min-height: 23rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .algorithmReadout > div > p {
+    min-height: auto;
+  }
+
+  .scoreFormula {
+    grid-template-columns: 1fr;
+  }
+
+  .problemStatement {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .problemStatement > p {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .ecosystemSection {
+    grid-template-columns: 11rem minmax(0, 1fr);
+  }
+
+  .affiliationNote {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 56rem) {
+  .learnHeroCopy h1,
+  .aboutHero h1 {
+    font-size: 3.35rem;
+  }
+
+  .courseLayout {
+    display: block;
+    width: 100%;
+  }
+
+  .courseRail {
+    position: relative;
+    z-index: 2;
+    top: auto;
+    padding: var(--space-5) 1rem;
+    border-bottom: 1px solid var(--color-line);
+    background: var(--color-surface);
+  }
+
+  .courseRail > p {
+    margin-bottom: var(--space-3);
+  }
+
+  .courseRail ol {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    scroll-snap-type: x mandatory;
+  }
+
+  .courseRail ol::before {
+    display: none;
+  }
+
+  .courseRail li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .courseRail a {
+    min-height: 2.5rem;
+    padding-right: var(--space-3);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-pill);
+    background: var(--color-canvas);
+  }
+
+  .courseRail a span {
+    border: 0;
+    background: transparent;
+  }
+
+  .courseChapters {
+    border-left: 0;
+  }
+
+  .courseChapter,
+  .courseChapterWide {
+    padding-inline: 1rem;
+  }
+
+  .sectionHeading,
+  .aboutSectionIntro {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .glossaryTerms {
+    display: flex;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line-strong);
+    scroll-snap-type: x mandatory;
+  }
+
+  .glossaryTerm {
+    width: 15rem;
+    min-width: 15rem;
+    border-right: 1px solid var(--color-line);
+    border-bottom: 0;
+    scroll-snap-align: start;
+  }
+
+  .glossaryTermActive {
+    box-shadow: inset 0 -3px var(--color-primary);
+  }
+
+  .learnNext,
+  .aboutNext {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .aboutHero {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .aboutHeroStatement p {
+    max-width: 38ch;
+  }
+
+  .problemStatement {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+
+  .methodFlow article {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+  }
+
+  .signalBand {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystemSection {
+    grid-template-columns: 1fr;
+  }
+
+  .affiliationNote {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 42rem) {
+  .learnHero {
+    min-height: auto;
+    padding-block: var(--space-12) var(--space-16);
+  }
+
+  .learnHeroCopy h1,
+  .aboutHero h1 {
+    font-size: 2.75rem;
+  }
+
+  .heroLede {
+    font-size: 1.05rem;
+  }
+
+  .heroActions > * {
+    width: 100%;
+  }
+
+  .heroRouteMap {
+    min-height: 23rem;
+  }
+
+  .mapStop {
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+  }
+
+  .mapStopStart,
+  .mapStopEnd {
+    top: calc(50% - 1.9rem);
+  }
+
+  .mapDecision {
+    right: var(--space-3);
+    bottom: var(--space-3);
+    max-width: 13rem;
+  }
+
+  .courseChapter {
+    min-height: auto;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding-block: var(--space-16);
+  }
+
+  .chapterCopy h2,
+  .sectionHeading h2,
+  .aboutSectionIntro h2,
+  .ecosystemCopy h2 {
+    font-size: 2.15rem;
+  }
+
+  .courseChapter > :last-child:not(.chapterCopy) {
+    grid-column: 1 / -1;
+  }
+
+  .paymentComparison > div {
+    flex-wrap: wrap;
+  }
+
+  .paymentComparison strong {
+    width: 100%;
+  }
+
+  .roadAnalogy,
+  .truckAnalogy,
+  .routeChoice {
+    margin-top: var(--space-5);
+  }
+
+  .factorList > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .courseChapterWide {
+    padding-block: var(--space-12);
+  }
+
+  .algorithmHeading,
+  .algorithmReadout,
+  .glossaryDefinition {
+    padding: var(--space-6);
+  }
+
+  .algorithmHeading h3 {
+    font-size: 1.8rem;
+  }
+
+  .algorithmCanvas {
+    min-height: 18rem;
+    padding: var(--space-3);
+  }
+
+  .distanceReadout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .distanceReadout > div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .distanceReadout > div:nth-child(n + 3) {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .algorithmActions > * {
+    width: 100%;
+  }
+
+  .scoreFormula {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .scoreFormula code {
+    font-size: 0.64rem;
+  }
+
+  .glossarySection {
+    padding-block: var(--space-16);
+  }
+
+  .glossaryDefinition h3 {
+    font-size: 2rem;
+  }
+
+  .definitionLayers > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .learnNext,
+  .aboutNext {
+    margin-bottom: var(--space-16);
+    padding: var(--space-6);
+  }
+
+  .learnNext > div {
+    grid-template-columns: 1fr;
+  }
+
+  .learnNext > div > svg {
+    grid-row: auto;
+    margin-bottom: var(--space-4);
+  }
+
+  .aboutHero {
+    padding-block: var(--space-16);
+  }
+
+  .aboutHeroStatement p {
+    font-size: 1.2rem;
+  }
+
+  .problemStatement {
+    grid-template-columns: 1fr;
+    padding-block: var(--space-16);
+  }
+
+  .problemStatement > p {
+    grid-column: auto;
+  }
+
+  .problemStatement h2 {
+    font-size: 1.85rem;
+  }
+
+  .approachSection,
+  .boundariesSection,
+  .ecosystemSection {
+    padding-block: var(--space-16);
+  }
+
+  .methodFlow article {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding-inline: 0;
+  }
+
+  .methodFlow article > svg {
+    display: none;
+  }
+
+  .boundaryHeader span,
+  .boundaryRow span {
+    padding: var(--space-3);
+  }
+
+  .boundaryHeader span,
+  .boundaryRow span {
+    font-size: 0.7rem;
+  }
+
+  .disclaimerSection {
+    grid-template-columns: 1fr;
+    margin-bottom: var(--space-16);
+    padding: var(--space-6);
+  }
+
+  .disclaimerSection h2 {
+    font-size: 1.65rem;
+  }
+
+  .aboutNext > div:last-child,
+  .aboutNext > div:last-child > * {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroRouteSelected {
+    animation: none;
+  }
+
+  .inlineLink svg,
+  .algorithmEdge,
+  .algorithmEdgeActive,
+  .algorithmEdgeFinal,
+  .algorithmNode circle,
+  .algorithmNodeVisited circle,
+  .algorithmNodeCurrent circle {
+    transition: none;
+  }
+}
